@@ -1,0 +1,3 @@
+const CONFIG = {
+    UNSPLASH_KEY: 'U_Mv0LGYyOtI6AbeZH508zsWQGp4AaFJnH0htHcLhSo'
+};
