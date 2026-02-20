@@ -298,7 +298,7 @@ const comingSoon = [
         }
 
         function checkHours() {
-            const badge = document.getElementById('');
+            const badge = document.getElementById('rating-badge');
             const now = new Date();
             const hour = now.getHours();
             
@@ -312,25 +312,7 @@ const comingSoon = [
                 badge.classList.remove('open');
             }
         }
-        
-        async function realHours() {
-            const badge = document.getElementById('rating-badge')
 
-            const url = "https://timeapi.io/api/v1/timezone/zone?timeZone=Asia%2FJakarta";
-
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('waktu tidak diketahui');
-                const result = await response.json();
-
-                if (result && result.time) {
-                    badge.innerText= `${result.time} WIB`
-                }
-            } catch (error) {
-        console.error("Error:", error);
-        badge.textContent = "is coding hard!";
-            }
-        }
         // Peeking shark click
         document.getElementById('shark-rawr').addEventListener('click', () => {
             confetti();
@@ -378,8 +360,6 @@ async function codeStats() {
 }
 
         // Init
-        realHours();
-        setInterval(realHours, 30000)
         codeStats();
         createBubbles();
         renderMenu();
