@@ -586,6 +586,7 @@ footer {
 
 .order-btn.github {
     background: #000000;
+    border-radius: 18px;
 }
 
 .order-btn.insta {
@@ -785,6 +786,12 @@ footer {
 }
 
 .modal-order-btn.link {
+    background: var(--blue-500);
+    border: none;
+    border-radius: 18px;
+}
+
+.order-btn.link {
     background: var(--blue-500);
     border: none;
     border-radius: 18px;

@@ -33,7 +33,7 @@ const projectItems = [
         price: "6 hours",
         images: ["assets/in.png", "assets/inn.png", "assets/innn.png"],
         github: "inarahgame",
-        link: "",
+        link: "nfnaaa.itch.io/inarah-back2school-nostalgic",
     },
     {
         name: "Liveterminal Personal Website",
@@ -41,7 +41,7 @@ const projectItems = [
         desc: "personal website with terminal style",
         price: "8.5 hours",
         images: ["assets/term.png", "assets/termm.png"],
-        github: "",
+        github: "nfnaaTerminalWebsite",
         link: "terminal.nfnaa.dev",
     },
     {
@@ -61,7 +61,7 @@ const comingSoon = [
         man: "爸爸银行",
         desc: "bank that'll give you everything",
         price: "still building",
-        images: ["assets/cs.jpeg", "assets/cs.jpeg"]
+        images: ["assets/cs.jpeg"]
     }, 
 ]
         
@@ -179,6 +179,7 @@ const comingSoon = [
                     <a href="https://github.com/cybloxyz/${currentItem.github}" class="order-btn github" target="_blank" style="text-decoration:none; margin-left:10px;">
                         Github Repo
                     </a>`;
+            }
 
             if (currentItem.link) {
                 buttonHtml += `
@@ -188,7 +189,7 @@ const comingSoon = [
             }
 
             links.innerHTML = buttonHtml;
-            }
+            
             
             document.getElementById('modal').classList.add('open');
             document.body.style.overflow = 'hidden';
