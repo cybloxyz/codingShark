@@ -50,7 +50,7 @@ const projectItems = [
         desc: "website that selling food and digital catalogue this website is still in building!",
         price: "15 hours",
         images: ["assets/bento.png", "assets/bbx.png"],
-        github: "",
+        github: "bentobox",
         link: "bentobox.nfnaa.dev",
     },
 ];
@@ -162,7 +162,7 @@ const comingSoon = [
             document.getElementById('modal-name').textContent = currentItem.name;
             document.getElementById('modal-man').textContent = currentItem.man;
             document.getElementById('modal-desc').textContent = currentItem.desc;
-            document.getElementById('modal-price').innerHTML = `${currentItem.price}`;
+            document.getElementById('modal-price').innerHTML = currentItem.price;
             
             // Wrap this logic to check if it's an array first:
             const imagesArray = Array.isArray(currentItem.images) ? currentItem.images : [currentItem.images];
@@ -359,7 +359,31 @@ async function codeStats() {
     }
 }
 
+async function getShark() {
+    const photo = document.getElementById('polaroid');
+    const api = CONFIG.UNSPLASH_KEY;
+
+    const url = `https://api.unsplash.com/photos/random?query=shark&client_id=${api}`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('data hiu gagal diambil');
+        const result = await response.json();
+
+        if (photo) {
+            photo.src = result.urls.regular;
+            console.log('hiu muncul!!');
+        }
+    }
+    catch (error) {
+    console.log("Error:", error);
+    if (photo) photo.alt = "Uhh searching for shark..";
+}
+} 
+
+
         // Init
+        getShark();
         codeStats();
         createBubbles();
         renderMenu();
