@@ -65,6 +65,13 @@ const comingSoon = [
     }, 
 ]
         
+const blub = new Audio('audio/dot.wav');
+
+function click() {
+    blub.currentTime = 0;
+    blub.play()
+}
+
         let currentItem = null;
         
         // Render menu
@@ -117,6 +124,7 @@ const comingSoon = [
             closeModal();
             confetti();
             toast('Opening github...');
+            click();
         }
 
         function openLink() {
@@ -176,14 +184,14 @@ const comingSoon = [
 
             if (currentItem.github) {
                 buttonHtml += `
-                    <a href="https://github.com/cybloxyz/${currentItem.github}" class="order-btn github" target="_blank" style="text-decoration:none; margin-left:10px;">
+                    <a href="https://github.com/cybloxyz/${currentItem.github}" class="order-btn github" onclick="click()" target="_blank" style="text-decoration:none; margin-left:10px;">
                         Github Repo
                     </a>`;
             }
 
             if (currentItem.link) {
                 buttonHtml += `
-                    <a href="https://${currentItem.link}" class="order-btn link" target="_blank" style="text-decoration:none; margin-left:10px;">
+                    <a href="https://${currentItem.link}" class="order-btn link" onclick="click()" target="_blank" style="text-decoration:none; margin-left:10px;">
                         Link
                     </a>`;
             }
@@ -206,6 +214,7 @@ const comingSoon = [
                 document.getElementById('modal').classList.remove('open');
                 document.body.style.overflow = '';
             }
+            click();
         }
         
         function openIns() {
@@ -213,6 +222,7 @@ const comingSoon = [
             closeModal();
             confetti();
             toast('Opening instagram...');
+            click();
         }
         
         function toast(msg) {
@@ -284,11 +294,12 @@ const comingSoon = [
                 },
                 { enableHighAccuracy: true }
             );
+            click();
         }
         
         // Haversine distance formula
         function getDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371; // Earth's radius in km
+            const R = 6378; // Earth's radius in km
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLon = (lon2 - lon1) * Math.PI / 180;
             const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
@@ -304,11 +315,11 @@ const comingSoon = [
             const hour = now.getHours();
             
             if (hour >= 9 && hour < 21) {
-                badge.textContent = 'coding..';
+                badge.textContent = 'is coding now..';
                 badge.classList.add('open');
                 badge.classList.remove('closed');
             } else {
-                badge.textContent = 'sleep..';
+                badge.textContent = 'sleep..zzz';
                 badge.classList.add('closed');
                 badge.classList.remove('open');
             }

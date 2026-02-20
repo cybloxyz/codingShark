@@ -579,7 +579,7 @@ footer {
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 50px;
-    color: white;
+    color: white; 
     transition: all 0.3s ease;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
@@ -606,6 +606,7 @@ footer {
     height: 32px;
     width: auto;
     filter: brightness(0) invert(1);
+    border-radius: 24px;
 }
 
 .order-btn .btn-logo-ig {
@@ -791,6 +792,20 @@ footer {
     border-radius: 18px;
 }
 
+.highlight-blue {
+    background: linear-gradient(180deg, #68a1f7 50%, #4e8dec 50%);
+    color: white;
+    padding: 0 6px;
+    border-radius: 4px;
+}
+
+.highlight-navy {
+    background: linear-gradient(180deg, #4f7ec4 50%, #2b528b 50%);
+    color: white;
+    padding: 0 6px;
+    border-radius: 4px;
+}
+
 .order-btn.link {
     background: var(--blue-500);
     border: none;
@@ -813,6 +828,12 @@ footer {
     font-weight: 700;
     color: var(--blue-500);
     margin-top: 6px;
+}
+
+.base-text {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--blue-500);
 }
 
 .footer-sub {
